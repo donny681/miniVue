@@ -29,3 +29,4 @@ export default class Scanner{
 		return this.pos >= this.templateStr.length;
 	}
 }
+
