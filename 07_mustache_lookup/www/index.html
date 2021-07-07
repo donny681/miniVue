@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="/xuni/bundle.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		bithc
+	</body>
+	<script type="text/javascript">
+		var Str = `我爱{{somebody}},{{somebody}}也爱我,我好{{a.b.c}}`;
+		var data = {
+			somebody:'某人',
+			a:{
+				b:{
+					c:"晒比"
+				}
+			}
+		}
+		// var data={};
+		
+		TemplateEngine.render(Str,data)
+	</script>
+</html>

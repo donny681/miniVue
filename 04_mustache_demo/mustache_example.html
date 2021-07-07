@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- <script src="https://unpkg.com/mustache@latest"></script> -->
+		<script src="./mustache.js"></script>
+	</head>
+	<body>
+		<div id="app">
+		
+		</div>
+		<div id="app1">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		console.log("here");
+		var templateStr = `
+		<ul>
+			{{#arr}}
+				<li>{{name}}的基本信息
+					<div>
+						<p>姓名:{{name}}</p>
+						<p>性别:{{sex}}</p>
+						<p>年龄:{{age}}</p>
+					</div>
+				</li>
+			{{/arr}}
+		</ul>
+			`;
+		var data = {
+			arr: [{
+				"name": "小明",
+				"age": 12,
+				"sex": "男"
+			}, {
+				"name": "小明",
+				"age": 12,
+				"sex": "男"
+			}, {
+				"name": "小明",
+				"age": 12,
+				"sex": "男"
+			}]
+		};
+		var domStr = Mustache.render(templateStr, data);
+		
+		console.log(domStr);
+		var container = document.getElementById('app');
+		container.innerHTML=domStr;
+		
+		var templateStr1 = `		<ul>
+			{{#arr}}
+			<li>{{.}}</li>
+			{{/arr}}
+		</ul>`;
+		var data1 ={
+			arr:['A','B','C']
+		}
+		var domstr1 = Mustache.render(templateStr1, data1);
+		console.log(domstr1);
+		container.innerHTML +=domstr1;
+	</script>
+</html>

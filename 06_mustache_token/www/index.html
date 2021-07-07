@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="/xuni/bundle.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		bithc
+	</body>
+	<script type="text/javascript">
+		var Str = `<div><ol>
+						{{#students}}
+						<li>
+							学生{{name}}的爱好是
+							<ol>
+								{{#hobbies}}
+								<li>{{.}}</li>
+								{{/hobbies}}
+							</ol>
+						</li>
+						{{/students}}
+						</ol>
+						</div>`;
+		 var data = {
+		            students: [
+		                { 'name': '小明', 'hobbies': ['编程', '游泳'] },
+		                { 'name': '小红', 'hobbies': ['看书', '弹琴', '画画'] },
+		                { 'name': '小强', 'hobbies': ['锻炼'] }
+		            ]
+		        };
+
+		TemplateEngine.render(Str)
+	</script>
+</html>
